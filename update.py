@@ -9,13 +9,15 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-sql = 'SELECT * from vendas.produtos'
+
+sql = f'UPDATE vendas.produtos SET nome_produtos = "new_teste2" , valor_produtos = 10 WHERE idProdutos = "1"'
 
 cursor.execute(sql)
-results = cursor.fetchall()
+connection.commit()
+
+recordsaffected = cursor.rowcount
 
 cursor.close()
 connection.close()
 
-for result in results:
-    print(result)
+print(recordsaffected, 'registro alterado')
