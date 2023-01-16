@@ -7,7 +7,7 @@ connection = mysql.connector.connect(
     database='vendas',
 )
 
-cursor = connection.cursor()eu pesquisei sansun apareceu sa porra
+cursor = connection.cursor()
 
 
 
